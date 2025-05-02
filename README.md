@@ -4,6 +4,19 @@
 
 This project is an external project for Isaac Lab that implements a cube lifting task using the SO-100 robot arm. For more information about external projects in Isaac Lab, see the [documentation](https://isaac-sim.github.io/IsaacLab/main/source/overview/developer-guide/template.html).
 
+## URDF Modifications
+
+The URDF file for the SO-100 robot arm has been modified to fix compatibility issues with Isaac Sim. Special thanks to the following Discord contributors for their help in identifying and fixing these issues:
+
+- Robert K - Identified and fixed issues with the Moving Jaw naming in URDF
+- robopie - Identified the correct URDF version to use and helped with troubleshooting
+- Fichtl - Provided insights on hardware setup and testing
+
+The main modifications include:
+- Renamed "Moving Jaw" to "Moving_Jaw" in link names and mesh references
+- Fixed mesh file references to ensure proper import into Isaac Sim
+- Ensured consistent naming conventions across the URDF structure
+
 ## Installation
 
 1. Install Isaac Lab by following the [installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html).
@@ -107,116 +120,4 @@ Once the external project is generated:
    > **Note**: If task names change, update the search pattern "Template-" in scripts/list_envs.py
 
 3. Run a task:
-   ```bash
-   # Linux/Windows
-   python scripts/<specific-rl-library>/train.py --task=<Task-Name>
    ```
-
-### Internal Task Usage
-
-For internal tasks, once generated:
-
-1. List available tasks:
-   ```bash
-   # Linux/Windows
-   python scripts/environments/list_envs.py
-   ```
-
-2. Run a task:
-   ```bash
-   # Linux/Windows
-   python scripts/reinforcement_learning/<specific-rl-library>/train.py --task=<Task-Name>
-   ```
-
-3. Run with dummy agents (useful for environment configuration testing):
-   
-   Zero-action agent:
-   ```bash
-   # Linux/Windows
-   python scripts/zero_agent.py --task=<Task-Name>
-   ```
-
-   Random-action agent:
-   ```bash
-   # Linux/Windows
-   python scripts/random_agent.py --task=<Task-Name>
-   ```
-
-> **Note**: If Isaac Lab is not installed in a conda environment or in a (virtual) Python environment, use `FULL_PATH_TO_ISAACLAB/isaaclab.sh -p` (Linux) or `FULL_PATH_TO_ISAACLAB\isaaclab.bat -p` (Windows) instead of `python` for the commands above.
-
-## Keywords
-
-**Keywords:** extension, template, isaaclab
-
-### Set up IDE (Optional)
-
-To setup the IDE, please follow these instructions:
-
-- Run VSCode Tasks, by pressing `Ctrl+Shift+P`, selecting `Tasks: Run Task` and running the `setup_python_env` in the drop down menu.
-  When running this task, you will be prompted to add the absolute path to your Isaac Sim installation.
-
-If everything executes correctly, it should create a file .python.env in the `.vscode` directory.
-The file contains the python paths to all the extensions provided by Isaac Sim and Omniverse.
-This helps in indexing all the python modules for intelligent suggestions while writing code.
-
-### Setup as Omniverse Extension (Optional)
-
-We provide an example UI extension that will load upon enabling your extension defined in `source/SO_100/SO_100/ui_extension_example.py`.
-
-To enable your extension, follow these steps:
-
-1. **Add the search path of this project/repository** to the extension manager:
-    - Navigate to the extension manager using `Window` -> `Extensions`.
-    - Click on the **Hamburger Icon**, then go to `Settings`.
-    - In the `Extension Search Paths`, enter the absolute path to the `source` directory of this project/repository.
-    - If not already present, in the `Extension Search Paths`, enter the path that leads to Isaac Lab's extension directory directory (`IsaacLab/source`)
-    - Click on the **Hamburger Icon**, then click `Refresh`.
-
-2. **Search and enable your extension**:
-    - Find your extension under the `Third Party` category.
-    - Toggle it to enable your extension.
-
-## Code formatting
-
-We have a pre-commit template to automatically format your code.
-To install pre-commit:
-
-```bash
-pip install pre-commit
-```
-
-Then you can run pre-commit with:
-
-```bash
-pre-commit run --all-files
-```
-
-## Troubleshooting
-
-### Pylance Missing Indexing of Extensions
-
-In some VsCode versions, the indexing of part of the extensions is missing.
-In this case, add the path to your extension in `.vscode/settings.json` under the key `"python.analysis.extraPaths"`.
-
-```json
-{
-    "python.analysis.extraPaths": [
-        "<path-to-ext-repo>/source/SO_100"
-    ]
-}
-```
-
-### Pylance Crash
-
-If you encounter a crash in `pylance`, it is probable that too many files are indexed and you run out of memory.
-A possible solution is to exclude some of omniverse packages that are not used in your project.
-To do so, modify `.vscode/settings.json` and comment out packages under the key `"python.analysis.extraPaths"`
-Some examples of packages that can likely be excluded are:
-
-```json
-"<path-to-isaac-sim>/extscache/omni.anim.*"         // Animation packages
-"<path-to-isaac-sim>/extscache/omni.kit.*"          // Kit UI tools
-"<path-to-isaac-sim>/extscache/omni.graph.*"        // Graph UI tools
-"<path-to-isaac-sim>/extscache/omni.services.*"     // Services tools
-...
-```
