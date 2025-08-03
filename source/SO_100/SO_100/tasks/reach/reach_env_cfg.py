@@ -74,9 +74,9 @@ class CommandsCfg:
         resampling_time_range=(5.0, 5.0),
         debug_vis=True,
         ranges=mdp.UniformPoseCommandCfg.Ranges(
-            pos_x=(0.4, 0.6),
-            pos_y=(-0.25, 0.25),
-            pos_z=(0.25, 0.5),
+            pos_x=(-0.1, 0.1),
+            pos_y=(-0.35, -0.15),
+            pos_z=(0.2, 0.4),
             roll=(0.0, 0.0),
             pitch=(0.0, 0.0),
             yaw=(0.0, 0.0),
@@ -222,6 +222,8 @@ class SoArm100ReachEnvCfg(ReachEnvCfg):
         self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["Fixed_Gripper"]
         self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["Fixed_Gripper"]
         self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["Fixed_Gripper"]
+
+        self.rewards.end_effector_orientation_tracking.weight = 0.0
 
         # override actions
         self.actions.arm_action = mdp.JointPositionActionCfg(
