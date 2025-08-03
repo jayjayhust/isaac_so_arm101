@@ -26,7 +26,7 @@ TEMPLATE_ASSETS_DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data
 # Configuration
 ##
 
-SO100_CFG = ArticulationCfg(
+ROS_SO100_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
         usd_path=f"{TEMPLATE_ASSETS_DATA_DIR}/Robots/ROS_SO_ARM100/SO-ARM101-ROS2.usd",
         activate_contact_sensors=False,  # Adjust based on need

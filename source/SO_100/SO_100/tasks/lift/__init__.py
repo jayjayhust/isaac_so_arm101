@@ -13,10 +13,10 @@ from . import agents
 
 # Register the SO-100 Cube Lift environment
 gym.register(
-    id="ROS_Template-So-100-CubeLift-v0",
+    id="SO-ARM100-Lift-Cube-v0",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.ROS_so_100_cube_lift_env_cfg:SO100CubeLiftEnvCfg",
+        "env_cfg_entry_point": f"{__name__}.lift_env_cfg:SoArm100CubeCubeLiftEnvCfg",
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
     },
     disable_env_checker=True,
