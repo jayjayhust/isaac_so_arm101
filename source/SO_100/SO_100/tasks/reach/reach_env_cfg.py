@@ -205,7 +205,7 @@ class ReachEnvCfg(ManagerBasedRLEnvCfg):
         self.decimation = 2
         self.sim.render_interval = self.decimation
         self.episode_length_s = 12.0
-        self.viewer.eye = (3.5, 3.5, 3.5)
+        self.viewer.eye = (2.5, 2.5, 1.5)
         # simulation settings
         self.sim.dt = 1.0 / 60.0
 
@@ -215,8 +215,6 @@ class SoArm100ReachEnvCfg(ReachEnvCfg):
     def __post_init__(self):
         # post init of parent
         super().__post_init__()
-
-        self.viewer.eye = [1.5, 1.5, 1.5]  # Adjusted for better view of the SO-100 arm
 
         # switch robot to franka
         self.scene.robot = SO_ARM100_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
