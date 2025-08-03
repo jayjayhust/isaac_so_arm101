@@ -216,6 +216,8 @@ class SoArm100ReachEnvCfg(ReachEnvCfg):
         # post init of parent
         super().__post_init__()
 
+        self.viewer.eye = [1.5, 1.5, 1.5]  # Adjusted for better view of the SO-100 arm
+
         # switch robot to franka
         self.scene.robot = SO_ARM100_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
         # override rewards
