@@ -236,6 +236,7 @@ class LiftEnvCfg(ManagerBasedRLEnvCfg):
         # general settings
         self.decimation = 2
         self.episode_length_s = 5.0
+        self.viewer.eye = (2.5, 2.5, 1.5)
         # simulation settings
         self.sim.dt = 0.01  # 100Hz
         self.sim.render_interval = self.decimation
@@ -297,18 +298,46 @@ class SoArm100CubeCubeLiftEnvCfg(LiftEnvCfg):
         marker_cfg.prim_path = "/Visuals/FrameTransformer"
         self.scene.ee_frame = FrameTransformerCfg(
             prim_path="{ENV_REGEX_NS}/Robot/Base",
-            debug_vis=False,
+            debug_vis=True,
             visualizer_cfg=marker_cfg,
             target_frames=[
                 FrameTransformerCfg.FrameCfg(
                     prim_path="{ENV_REGEX_NS}/Robot/Fixed_Gripper",
                     name="end_effector",
                     offset=OffsetCfg(
-                        pos=[0.0, 0.0, 0.0],
+                        pos=[0.01, 0.0, 0.1],
                     ),
                 ),
             ],
         )
+
+        # Configure cube marker with different color and path
+        cube_marker_cfg = FRAME_MARKER_CFG.copy()
+        cube_marker_cfg.markers = {
+            "frame": sim_utils.UsdFileCfg(
+                usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/UIElements/frame_prim.usd",
+                scale=(0.05, 0.05, 0.05),
+                visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(1.0, 0.0, 0.0)),
+            )
+        }
+        cube_marker_cfg.prim_path = "/Visuals/CubeFrameMarker"
+        
+        self.scene.cube_marker = FrameTransformerCfg(
+            prim_path="{ENV_REGEX_NS}/Object",
+            debug_vis=True,
+            visualizer_cfg=cube_marker_cfg,
+            target_frames=[
+                FrameTransformerCfg.FrameCfg(
+                    prim_path="{ENV_REGEX_NS}/Object",
+                    name="cube",
+                    offset=OffsetCfg(
+                        pos=(0.0, 0.0, 0.0),
+                    ),
+                ),
+            ],
+        )
+
+
 
 
 @configclass
