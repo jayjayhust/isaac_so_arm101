@@ -10,7 +10,7 @@ This repository implements tasks for the SO‑ARM100 and SO‑ARM101 robots usin
 
 🎬 **Watch the Lift Task in action**
 
-
+![rl-video-step-0](https://github.com/user-attachments/assets/890e3a9d-5cbd-46a5-9317-37d0f2511684)
 
 ## 🛠️ Installation
 
