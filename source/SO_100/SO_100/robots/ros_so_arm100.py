@@ -14,21 +14,21 @@ The following configurations are available:
 import os
 import math
 
+from pathlib import Path
+
 import isaaclab.sim as sim_utils
 from isaaclab.actuators import ImplicitActuatorCfg
 from isaaclab.assets.articulation import ArticulationCfg
 
-# Note: Use forward slashes for paths even on Windows
-# Construct the absolute path to the USD file relative to this script's location
-_THIS_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SO100_USD_PATH = os.path.join(_THIS_SCRIPT_DIR, "asset", "SO-ARM101-ROS2.usd")
+TEMPLATE_ASSETS_DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
+
 ##
 # Configuration
 ##
 
-SO100_CFG = ArticulationCfg(
+ROS_SO100_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=SO100_USD_PATH,
+        usd_path=f"{TEMPLATE_ASSETS_DATA_DIR}/Robots/ROS_SO_ARM100/SO-ARM101-ROS2.usd",
         activate_contact_sensors=False,  # Adjust based on need
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,

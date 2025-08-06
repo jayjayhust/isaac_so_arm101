@@ -56,16 +56,8 @@ _build
 # RL-Games and Training
 runs/
 recordings/
-logs/*
-!logs/
-!logs/skrl/
-!logs/skrl/SO100_lift/
-logs/skrl/SO100_lift/*
-!logs/skrl/SO100_lift/trained/
-logs/skrl/SO100_lift/trained/*
-!logs/skrl/SO100_lift/trained/checkpoints/
-logs/skrl/SO100_lift/trained/checkpoints/*
-!logs/skrl/SO100_lift/trained/checkpoints/.gitkeep
+**/logs/*
+logs/
 
 # Pre-Trained Checkpoints
 /.pretrained_checkpoints/
