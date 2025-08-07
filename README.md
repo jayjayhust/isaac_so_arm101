@@ -4,9 +4,9 @@ This repository implements tasks for the SO‑ARM100 and SO‑ARM101 robots usin
 
 📰 **News featuring this repository:**
 
-* **10 June 2025:** 🎥 LycheeAI Channel Premiere: SO-ARM101 tutorial series announcement! [🔗 Watch on YouTube](https://www.youtube.com/watch?v=2uH7Zn4SAVI)
-* **23 April 2025:** 🤖 NVIDIA Omniverse Livestream: Training a Robot from Scratch in Simulation (URDF → OpenUSD). [🔗 Watch on YouTube](https://www.youtube.com/watch?v=_HMk7I-vSBQ)
-* **19 April 2025:** 🎥 LycheeAI Tutorial: How to Create External Projects in Isaac Lab. [🔗 Watch on YouTube](https://www.youtube.com/watch?v=i51krqsk8ps)
+- **10 June 2025:** 🎥 LycheeAI Channel Premiere: SO-ARM101 tutorial series announcement! [🔗 Watch on YouTube](https://www.youtube.com/watch?v=2uH7Zn4SAVI)
+- **23 April 2025:** 🤖 NVIDIA Omniverse Livestream: Training a Robot from Scratch in Simulation (URDF → OpenUSD). [🔗 Watch on YouTube](https://www.youtube.com/watch?v=_HMk7I-vSBQ)
+- **19 April 2025:** 🎥 LycheeAI Tutorial: How to Create External Projects in Isaac Lab. [🔗 Watch on YouTube](https://www.youtube.com/watch?v=i51krqsk8ps)
 
 🎬 **Watch the Lift Task in action**
 
@@ -68,4 +68,24 @@ This ensures that your policy performs as expected in Isaac Lab before attemptin
 
 ## 🔄 Sim2Real Transfer
 
-*Work in progress.*
+_Work in progress._
+
+## 📄 License
+
+This project is licensed under the BSD 3-Clause License. See the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+This project builds upon the excellent work of several open-source projects and communities:
+
+- **[Isaac Lab](https://isaac-sim.github.io/IsaacLab/)** - The foundational robotics simulation framework that powers this project
+- **[NVIDIA Isaac Sim](https://developer.nvidia.com/isaac-sim)** - The underlying physics simulation platform
+- **[RSL-RL](https://github.com/leggedrobotics/rsl_rl)** - Reinforcement learning library used for training policies
+- **[SKRL](https://github.com/Toni-SM/skrl)** - Alternative RL library integration
+- **SO-ARM100/SO-ARM101 Robot** - The hardware platform that inspired this simulation environment
+
+Special thanks to:
+
+- The Isaac Lab development team at NVIDIA for providing the simulation framework
+- Hugging Face and The Robot Studio for the [SO‑ARM robot series](https://github.com/TheRobotStudio/SO-ARM100)
+- The LycheeAI Hub community for tutorials and support
