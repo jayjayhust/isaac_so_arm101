@@ -49,13 +49,14 @@ Please confirm the following:
 Before filing your issue, please review these to ensure it's not a general Isaac Sim or Isaac Lab issue:
 
 - Isaac Sim FAQ:
-  https://docs.isaacsim.omniverse.nvidia.com/4.5.0/overview/faq_index.html
+  https://docs.isaacsim.omniverse.nvidia.com/latest/overview/faq_index.html
 
 - Isaac Sim Known Issues:
-  https://docs.isaacsim.omniverse.nvidia.com/4.5.0/overview/known_issues.html
-
-- Isaac Sim Developer Forum:
-  https://forums.developer.nvidia.com/c/omniverse/300
+  https://docs.isaacsim.omniverse.nvidia.com/latest/overview/known_issues.html
 
 - Isaac Lab GitHub Issues:
   https://github.com/isaac-sim/IsaacLab/issues
+  
+- Isaac Sim Github Issues:
+  https://github.com/isaac-sim/IsaacSim/issues
+
