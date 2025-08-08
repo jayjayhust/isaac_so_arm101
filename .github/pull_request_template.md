@@ -1,47 +1,59 @@
-## Summary
+<!-- 
+Thank you for taking the time to contribute! Please complete ALL sections below to help us in accurately assessing and addressing the pull request.
+-->
 
-<!-- Briefly describe what this PR does. Be concise but informative. -->
-Example:
-> This PR adds a new "Pick-and-Place" task environment and training configurations.
+## 🛠 Type of Change
+<!-- 
+Delete those not concerned. 
+-->
+ 
+- New feature or enhancement  
+- Bug fix  
+- Documentation update  
+- Refactor or code cleanup  
+- Maintenance or dependency update  
+- Other  
 
+## 📝 Description  
+<!-- 
+Briefly describe what this PR does. Be concise but informative. Example: This PR adds a new "Pick-and-Place" task environment and training configurations.
+-->
 
-## Type of Change
+## 🧪 Testing
+<!-- 
+Describe how you tested your changes and any relevant results. Attach logs or screenshots if needed.  
 
-Please mark the relevant options:
+Example:  
+- Ran `scripts/pick_and_place.py` in standalone mode  
+- Verified the robot completes the task without crashes or warnings  
+- Confirmed environment loads from the task registry  
+- Ran `pytest` — all tests pass  
+-->
 
-- [ ] New feature or enhancement
-- [ ] Bug fix
-- [ ] Documentation update
-- [ ] Refactor or code cleanup
-- [ ] Maintenance or dependency update
-- [ ] Other
+## 🔗 Related Issues
+<!-- 
+If this PR addresses or closes any issues, mention them here. Example: Closes #123  
+-->
 
-## Testing
+Closes
 
-<!-- Describe how you tested your changes and any relevant test results. Attach logs or screenshots if needed. -->
-Example:
-> - Ran `scripts/pick_and_place.py` in standalone mode
-> - Verified that the robot successfully completes the task without crashes or warnings.
-> - Confirmed environment loads properly from the task registry.
-> - Ran `pytest` on modified modules — all tests pass.
+## ✅ Checklist
+<!-- 
+Please confirm the following by changing to [x]
+ -->
 
-## Related Issues
+- [] I’ve run `pre-commit` on all modified files  
+- [] I’ve tested in simulation or verified that changes don’t break expected behavior  
+- [] I’ve updated documentation where needed  
+- [] I’ve reviewed open issues to ensure this is not a duplicate  
+- [] Code follows the repository’s style and structure  
 
-<!-- If this PR addresses or closes any issues, mention them here. Example: Closes #123 -->
-Closes:
+## 📷 Screenshots / Demos _(if applicable)_
+<!-- 
+Drag & drop images or videos to visually show changes, especially for new features. 
+-->
 
-## Checklist
-
-- [ ] I’ve run `pre-commit` on all modified files.
-- [ ] I’ve tested this in simulation or verified that the changes do not break expected behavior.
-- [ ] I’ve updated existing documentation or added new docs as needed.
-- [ ] I’ve reviewed open issues and confirmed this change is not a duplicate effort.
-- [ ] The code follows the repository’s coding style and structure.
-
-## Screenshots / Demos (if applicable)
-
-<!-- Drag & drop images or videos to show changes visually, especially for new features. -->
-
-## Notes for Reviewers
-
-<!-- Optional: Add anything you'd like reviewers to keep in mind during review. -->
+## 💬 Notes for Reviewers
+<!-- 
+Optional: Add anything you'd like reviewers to keep in mind during review. 
+-->

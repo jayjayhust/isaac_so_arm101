@@ -5,21 +5,20 @@ title: ''
 labels: ''
 assignees: ''
 ---
-
 <!--  
 Thank you for taking the time to contribute! Please complete ALL sections below to help us in accurately assessing and addressing the issue.
 -->
 
 ## 📌 Issue Type  
-
-<!-- Delete those not concerned. -->
+<!-- 
+Delete those not concerned. 
+-->
 
 - Bug Report  
 - Feature Request  
 - Question / Support  
 
 ## 📝 Description  
-
 <!--  
 Clearly describe the problem, feature idea, or question. Be concise but specific.
 
@@ -30,16 +29,14 @@ Example:
 -->
 
 ## 📄 Error Log or Output _(if applicable)_  
-
 <!-- 
 Paste full error log, stack trace, or terminal output here. For feature requests or questions, you can leave this blank.
- -->
+-->
 
 ## 💻 System Information  
-
 <!-- 
 Please fill in your system configuration:
- -->
+-->
 
 - Isaac Sim Version: (e.g., 4.5.0)
 - Isaac Lab Version (if used): (e.g., 2.1.1)
@@ -48,10 +45,9 @@ Please fill in your system configuration:
 - Operating System: (e.g., Ubuntu 22.04)
 
 ## ✅ Scope Confirmation  
-
 <!-- 
 Please confirm the following by changing to [x]
- -->
+-->
 
 - [] This issue is specific to THIS robotic arm simulation repository.
 - [] I have verified that the issue is not caused by Isaac Sim or Isaac Lab.
