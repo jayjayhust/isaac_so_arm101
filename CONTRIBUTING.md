@@ -76,8 +76,8 @@ updates config for python 3.10
 
 ### Pull Request Titles
 
-- Follow the same format as commit messages  
-- Example: `adds user authentication`, `fixes login redirect bug`
+- Follow the same format as commit messages, except a upper case is expected for the first character
+- Example: `Adds user authentication`, `Fixes login redirect bug`
 
 ---
 
