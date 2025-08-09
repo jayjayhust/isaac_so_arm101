@@ -16,19 +16,12 @@ Click the **Fork** button at the top-right of the repository page to create your
 
 ### 2. Clone Your Fork
 
-Using SSH (recommended):
 
 ```bash
-git clone git@github.com:your-username/IsaacLab-SO_100.git
+git clone git@github.com:<your-username>/IsaacLab-SO_100.git
 cd IsaacLab-SO_100
 ```
 
-Or using HTTPS:
-
-```bash
-git clone https://github.com/your-username/IsaacLab-SO_100.git
-cd IsaacLab-SO_100
-```
 
 ### 3. Add the Original Repository as Upstream
 
