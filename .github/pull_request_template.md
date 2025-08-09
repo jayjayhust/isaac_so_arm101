@@ -1,6 +1,9 @@
 ## Summary
 
 <!-- Briefly describe what this PR does. Be concise but informative. -->
+
+**Before you start:** Please read our [Contributing Guide](../CONTRIBUTING.md) for details on setting up your environment, following our coding style, and passing pre-commit checks.
+
 Example:
 > This PR adds a new "Pick-and-Place" task environment and training configurations.
 
