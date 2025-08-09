@@ -8,6 +8,35 @@ Please follow these guidelines to ensure a smooth and productive collaboration.
 
 ---
 
+> **Note:** Before contributing, you must install **Git LFS** (per your OS) **and** enable **pre-commit hooks**.
+
+## Install Git LFS
+
+Ubuntu/Debian
+```bash
+sudo apt install git-lfs
+git lfs install
+```
+
+macOS
+```bash
+brew install git-lfs
+git lfs install
+```
+
+Windows
+```bash
+choco install git-lfs   # or: winget install Git.GitLFS
+git lfs install
+```
+
+Or manual download:
+https://git-lfs.github.com/
+
+> Note: Enable pre-commits after cloning
+
+---
+
 ## 🚀 Contribution Workflow
 
 ### 1. Fork the Repository
@@ -16,12 +45,22 @@ Click the **Fork** button at the top-right of the repository page to create your
 
 ### 2. Clone Your Fork
 
+> Note: Setup SSH keys (if you haven’t already)
+
+To push changes via SSH, you need to add your SSH key to your GitHub account.  
+Follow the official guide here: **[GitHub SSH setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)**
 
 ```bash
 git clone git@github.com:<your-username>/IsaacLab-SO_100.git
 cd IsaacLab-SO_100
 ```
 
+Enable pre-commit hooks
+
+```bash
+pip install pre-commit
+pre-commit install
+```
 
 ### 3. Add the Original Repository as Upstream
 
@@ -40,7 +79,7 @@ git merge upstream/main
 
 ### 4. Create a Feature Branch
 
-Always create a new branch off `main` for your work.  
+Always create a new branch from `main` for your work.  
 Use a **clear, kebab-case** name describing your contribution:
 
 ```bash
@@ -80,8 +119,8 @@ When your changes are ready:
 
 ```bash
 git add .
-git commit -m "adds contributing guide"
-git push origin adds-contributing-guide
+git commit -m "your commit message"
+git push origin your-working-branch
 ```
 
 ---
