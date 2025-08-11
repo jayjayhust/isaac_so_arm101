@@ -44,11 +44,11 @@ Closes
 Please confirm the following by changing to [x]
  -->
 
-- [ ] I’ve run `pre-commit` on all modified files  
-- [ ] I’ve tested in simulation or verified that changes don’t break expected behavior  
-- [ ] I’ve updated documentation where needed  
-- [ ] I’ve reviewed open issues to ensure this is not a duplicate  
-- [ ] Code follows the repository’s style and structure  
+- [] I’ve run `pre-commit` on all modified files  
+- [] I’ve tested in simulation or verified that changes don’t break expected behavior  
+- [] I’ve updated documentation where needed  
+- [] I’ve reviewed open issues to ensure this is not a duplicate  
+- [] Code follows the repository’s style and structure  
 
 ## 📷 Screenshots / Demos _(if applicable)_
 <!-- 
