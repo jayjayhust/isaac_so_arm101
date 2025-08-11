@@ -13,6 +13,7 @@ Guidelines for modifications:
 ## Developers
 
 - Muammer Bay (LycheeAI)
+- Louis Le Lay
 
 ## Contributors
 
