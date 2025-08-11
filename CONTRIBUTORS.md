@@ -17,7 +17,7 @@ Guidelines for modifications:
 ## Contributors
 
 - Dhyan Thakkar
-- Loiuse Le Lay
+- Louis Le Lay
 - Mann Bhanushali
 - Muammer Bay (LycheeAI)
 
