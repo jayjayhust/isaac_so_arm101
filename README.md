@@ -94,3 +94,19 @@ Special thanks to:
 - The Isaac Lab development team at NVIDIA for providing the simulation framework
 - Hugging Face and The Robot Studio for the SO‑ARM robot series
 - The LycheeAI Hub community for tutorials and support
+
+## 📚 Citation
+
+If you use this work, please cite it as:
+
+```bibtex
+@software{Louis_Isaac_Lab_2025,
+author = {Louis, Le Lay and Muammer, Bay},
+doi = {https://doi.org/10.5281/zenodo.16794229},
+license = {BSD-3-Clause},
+month = apr,
+title = {{Isaac Lab – SO‑ARM100 / SO‑ARM101 Project}},
+url = {https://github.com/MuammerBay/isaac_so_arm101},
+version = {1.1.0},
+year = {2025}
+}
