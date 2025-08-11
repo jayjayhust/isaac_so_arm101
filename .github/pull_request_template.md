@@ -1,3 +1,5 @@
+**Before you start:** Please read our [Contributing Guide](../CONTRIBUTING.md) for details on setting up your environment, following our coding style, and passing pre-commit checks.
+
 <!-- 
 Thank you for taking the time to contribute! Please complete ALL sections below to help us in accurately assessing and addressing the pull request.
 -->
