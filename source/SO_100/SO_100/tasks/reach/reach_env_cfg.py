@@ -24,7 +24,7 @@ from isaaclab.utils.noise import AdditiveUniformNoiseCfg as Unoise
 # import mdp
 import isaaclab_tasks.manager_based.manipulation.reach.mdp as mdp
 
-from SO_100.robots import SO_ARM100_CFG
+from SO_100.robots import SO_ARM100_CFG, SO_ARM100_ROS2_CFG
 
 ##
 # Scene definition
@@ -239,6 +239,43 @@ class SoArm100ReachEnvCfg(ReachEnvCfg):
 
 @configclass
 class SoArm100ReachEnvCfg_PLAY(SoArm100ReachEnvCfg):
+    def __post_init__(self):
+        # post init of parent
+        super().__post_init__()
+        # make a smaller scene for play
+        self.scene.num_envs = 50
+        self.scene.env_spacing = 2.5
+        # disable randomization for play
+        self.observations.policy.enable_corruption = False
+
+@configclass
+class SoArm100Ros2ReachEnvCfg(ReachEnvCfg):
+    def __post_init__(self):
+        # post init of parent
+        super().__post_init__()
+
+        # switch robot to franka
+        self.scene.robot = SO_ARM100_ROS2_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
+        # override rewards
+        self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["wrist_2_link"]
+        self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["wrist_2_link"]
+        self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["wrist_2_link"]
+
+        self.rewards.end_effector_orientation_tracking.weight = 0.0
+
+        # override actions
+        self.actions.arm_action = mdp.JointPositionActionCfg(
+            asset_name="robot", 
+            joint_names=[["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_pitch_joint", "wrist_roll_joint"]], 
+            scale=0.5, use_default_offset=True
+        )
+        # override command generator body
+        # end-effector is along z-direction
+        self.commands.ee_pose.body_name = ["wrist_2_link"]
+        # self.commands.ee_pose.ranges.pitch = (math.pi, math.pi)
+
+@configclass
+class SoArm100Ros2ReachEnvCfg_PLAY(SoArm100Ros2ReachEnvCfg):
     def __post_init__(self):
         # post init of parent
         super().__post_init__()
