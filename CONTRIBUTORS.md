@@ -1,6 +1,6 @@
-# IsaacLab-SO_100 Developers and Contributors
+# LycheeAI IsaacLab-SO_100 Developers and Contributors
 
-This is the official list of IsaacLab-SO_100 project developers and contributors.
+This is the official list of LycheeAI IsaacLab-SO_100 project developers and contributors.
 
 To see the full list of contributors, please check the revision history in the source control.
 
