@@ -41,7 +41,7 @@ from isaaclab.markers.config import FRAME_MARKER_CFG  # isort: skip
 # from . import mdp
 import isaaclab_tasks.manager_based.manipulation.lift.mdp as mdp
 
-from SO_100.robots import SO_ARM100_CFG
+from SO_100.robots import SO_ARM100_CFG 
 
 ##
 # Scene definition
@@ -160,7 +160,7 @@ class EventCfg:
 class RewardsCfg:
     """Reward terms for the MDP."""
 
-    reaching_object = RewTerm(func=mdp.object_ee_distance, params={"std": 0.1}, weight=1.0)
+    reaching_object = RewTerm(func=mdp.object_ee_distance, params={"std": 0.05}, weight=1.0)
 
     lifting_object = RewTerm(func=mdp.object_is_lifted, params={"minimal_height": 0.04}, weight=15.0)
 
@@ -311,32 +311,6 @@ class SoArm100CubeCubeLiftEnvCfg(LiftEnvCfg):
             ],
         )
 
-        # Configure cube marker with different color and path
-        cube_marker_cfg = FRAME_MARKER_CFG.copy()
-        cube_marker_cfg.markers = {
-            "frame": sim_utils.UsdFileCfg(
-                usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/UIElements/frame_prim.usd",
-                scale=(0.05, 0.05, 0.05),
-                visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(1.0, 0.0, 0.0)),
-            )
-        }
-        cube_marker_cfg.prim_path = "/Visuals/CubeFrameMarker"
-        
-        self.scene.cube_marker = FrameTransformerCfg(
-            prim_path="{ENV_REGEX_NS}/Object",
-            debug_vis=True,
-            visualizer_cfg=cube_marker_cfg,
-            target_frames=[
-                FrameTransformerCfg.FrameCfg(
-                    prim_path="{ENV_REGEX_NS}/Object",
-                    name="cube",
-                    offset=OffsetCfg(
-                        pos=(0.0, 0.0, 0.0),
-                    ),
-                ),
-            ],
-        )
-
 
 
 
@@ -350,3 +324,4 @@ class SoArm100CubeCubeLiftEnvCfg_PLAY(SoArm100CubeCubeLiftEnvCfg):
         self.scene.env_spacing = 2.5
         # disable randomization for play
         self.observations.policy.enable_corruption = False
+
