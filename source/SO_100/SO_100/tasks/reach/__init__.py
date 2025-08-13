@@ -11,7 +11,7 @@ from . import agents
 # Register Gym environments.
 ##
 
-# Register the SO-100 Cube Lift environment
+# Register the SO-100 Reach environment
 gym.register(
     id="SO-ARM100-Reach-v0",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",
