@@ -33,26 +33,3 @@ gym.register(
     },
     disable_env_checker=True,
 )
-
-# Register the SO-100 Reach environment
-gym.register(
-    id="SO-ARM100-ROS2-Reach-v0",
-    entry_point="isaaclab.envs:ManagerBasedRLEnv",
-    kwargs={
-        "env_cfg_entry_point": f"{__name__}.reach_env_cfg:SoArm100Ros2ReachEnvCfg",
-        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
-        "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:ReachPPORunnerCfg",
-    },
-    disable_env_checker=True,
-)
-
-gym.register(
-    id="SO-ARM100-ROS2-Reach-Play-v0",
-    entry_point="isaaclab.envs:ManagerBasedRLEnv",
-    kwargs={
-        "env_cfg_entry_point": f"{__name__}.reach_env_cfg:SoArm100Ros2ReachEnvCfg_PLAY",
-        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
-        "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:ReachPPORunnerCfg",
-    },
-    disable_env_checker=True,
-)
