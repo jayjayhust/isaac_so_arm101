@@ -15,6 +15,17 @@ This repository implements tasks for the SO‑ARM100 and SO‑ARM101 robots usin
 ## 🛠️ Installation
 
 1. Install Isaac Lab by following the [official installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) (using conda).
+```bash
+# only need once
+conda create -n env_isaaclab python=3.11
+conda activate env_isaaclab  # then: cd <isaaclab root directory>
+./isaaclab.sh --conda
+./isaaclab.sh --install
+source _isaac_sim/setup_conda_env.sh  # make sure isaacsim soft link exsists
+
+# make sure conda env is activated everytime
+conda activate env_isaaclab
+```
 2. Clone this repository **outside** the `IsaacLab` directory.
 3. Install the package:
 
@@ -56,15 +67,43 @@ You can train a policy for SO‑ARM100 / SO‑ARM101 tasks (for example, the **R
 
 ```bash
 python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0 --headless
+# or
+python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 12000 --headless
 ```
 
 After training, validate the learned policy:
 
 ```bash
 python scripts/rsl_rl/play.py --task SO-ARM100-Reach-Play-v0
+# or
+python scripts/rsl_rl/play.py --task SO-ARM100-Lift-Cube-Play-v0
 ```
 
 This ensures that your policy performs as expected in Isaac Lab before attempting real‑world transfer.
+
+### improve policy to downgrade the iterations
+#### add lift reward?(not tested)
+```python
+# rewards.py
+# ...
+def object_lift_height(
+    env: ManagerBasedRLEnv, 
+    scale: float = 1.0,
+    object_cfg: SceneEntityCfg = SceneEntityCfg("object")
+) -> torch.Tensor:
+    """Reward the agent for lifting the object higher. The higher the better."""
+    object: RigidObject = env.scene[object_cfg.name]
+    # Get the z-coordinate (height) of the object
+    object_height = object.data.root_pos_w[:, 2]
+    # Return the height scaled by the scale factor
+    # We use a maximum to ensure the reward is always positive
+    return torch.maximum(object_height * scale, torch.zeros_like(object_height))
+
+# lift_env_cfg.py
+# ...
+from . import mdp as local_mdp
+lift_height = RewTerm(func=local_mdp.object_lift_height, params={"scale": 10.0}, weight=10.0)
+```
 
 ## 🔄 Sim2Real Transfer
 
