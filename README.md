@@ -84,7 +84,7 @@ This ensures that your policy performs as expected in Isaac Lab before attemptin
 ### improve policy to downgrade the iterations
 #### add lift reward?(not tested)
 ```python
-# rewards.py
+# source/SO_100/SO_100/tasks/lift/mdp/rewards.py
 # ...
 def object_lift_height(
     env: ManagerBasedRLEnv, 
@@ -99,7 +99,7 @@ def object_lift_height(
     # We use a maximum to ensure the reward is always positive
     return torch.maximum(object_height * scale, torch.zeros_like(object_height))
 
-# lift_env_cfg.py
+# source/SO_100/SO_100/tasks/lift/lift_env_cfg.py
 # ...
 from . import mdp as local_mdp
 lift_height = RewTerm(func=local_mdp.object_lift_height, params={"scale": 10.0}, weight=10.0)
