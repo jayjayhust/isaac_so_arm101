@@ -81,8 +81,8 @@ python scripts/rsl_rl/play.py --task SO-ARM100-Lift-Cube-Play-v0
 
 This ensures that your policy performs as expected in Isaac Lab before attempting real‑world transfer.
 
-### improve policy to downgrade the iterations
-#### add lift reward?(not tested)
+### change policy to downgrade the iterations
+#### add a lift high reward, try to see the consequence
 ```python
 # source/SO_100/SO_100/tasks/lift/mdp/rewards.py
 # ...
@@ -104,6 +104,9 @@ def object_lift_height(
 from . import mdp as local_mdp
 lift_height = RewTerm(func=local_mdp.object_lift_height, params={"scale": 10.0}, weight=10.0)
 ```
+
+### related resource
+- [Train Your Second Robot in Isaac Lab: create the isaaclab from template project 'Reach' and modify/add Actions/Commands/Observations/Terminations/Events/Reward/Curriculum...](https://learn.nvidia.com/courses/course?course_id=course-v1:DLI+S-OV-47+V1&unit=block-v1:DLI+S-OV-47+V1+type@vertical+block@fff0914a40cd4929854106a693f0cd06)
 
 ## 🔄 Sim2Real Transfer
 
