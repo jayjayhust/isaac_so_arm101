@@ -69,6 +69,10 @@ You can train a policy for SO‑ARM100 / SO‑ARM101 tasks (for example, the **R
 python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0 --headless
 # or
 python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 12000 --headless
+
+python scripts/skrl/train.py --task SO-ARM100-Reach-v0 --headless
+# or
+python scripts/skrl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 12000 --headless
 ```
 
 After training, validate the learned policy:
@@ -77,6 +81,10 @@ After training, validate the learned policy:
 python scripts/rsl_rl/play.py --task SO-ARM100-Reach-Play-v0
 # or
 python scripts/rsl_rl/play.py --task SO-ARM100-Lift-Cube-Play-v0
+
+python scripts/skrl/play.py --task SO-ARM100-Reach-Play-v0
+# or
+python scripts/skrl/play.py --task SO-ARM100-Lift-Cube-Play-v0
 ```
 
 This ensures that your policy performs as expected in Isaac Lab before attempting real‑world transfer.
